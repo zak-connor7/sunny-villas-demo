@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Jost:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #fdfaf6;
+  --dark: #1a1610;
+  --accent: #c49a6c;
+  --muted: #9a8878;
+  --border: #e5d9c8;
+  --surface: #f0e8d8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--dark);
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: 'Forum', serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: white;
+}
