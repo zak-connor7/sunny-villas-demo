@@ -4,6 +4,8 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 
+const BOOKING_URL = 'https://sunnyvillasresortandspa.reserve-online.net/'
+
 const villas = [
   {
     name: 'Grande Villa',
@@ -13,7 +15,7 @@ const villas = [
     feature: 'Private heated pool · Whirlpool bathroom · Fireplace',
     description:
       'Three separate bedrooms across two levels, including a loft. A master bedroom with a private whirlpool bathroom, panoramic sea views, and a fireplace for winter evenings.',
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=85',
+    image: 'https://www.sunnyvillashalkidiki.com/images/grande-villa-header-01.jpg',
   },
   {
     name: 'Two Bedroom Villa',
@@ -23,7 +25,7 @@ const villas = [
     feature: 'Private pool · Sea & garden views · Terrace',
     description:
       'Two beautifully appointed bedrooms with Mediterranean finishes. A fully equipped kitchen, private pool terrace with sunbeds, and balcony views that stop you in your tracks.',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900&q=85',
+    image: 'https://www.sunnyvillashalkidiki.com/images/header-tow-bedroom-villa-01.jpg',
   },
   {
     name: 'Spa Villa',
@@ -33,7 +35,7 @@ const villas = [
     feature: 'Private loft spa · Sauna · Hydro-jet shower',
     description:
       'Your own private spa in the loft — a whirlpool and sauna for two. A unique hydro-jet rain shower, sea views from every room, and a welcome bottle of wine waiting on arrival.',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=85',
+    image: 'https://www.sunnyvillashalkidiki.com/images/header-spa-villa-new.jpg',
   },
   {
     name: 'Exclusive Villa',
@@ -42,8 +44,8 @@ const villas = [
     tag: 'Most Exclusive',
     feature: 'Fully bespoke · Premium finishes · Private',
     description:
-      'Our most exclusive property. Every detail is arranged around you — premium finishes, total privacy, and a service level that goes beyond what you&apos;d expect.',
-    image: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=900&q=85',
+      'Our most exclusive property. Every detail is arranged around you — premium finishes, total privacy, and a service level that goes beyond what you would expect.',
+    image: 'https://www.sunnyvillashalkidiki.com/images/exclusive-villa-header.jpg',
   },
 ]
 
@@ -82,10 +84,10 @@ export default function Villas() {
             <h2 className="font-display text-[clamp(36px,5vw,64px)] text-white leading-[1.05]">
               Choose Your
               <br />
-              <span className="text-[#c49a6c] italic">Private Retreat</span>
+              <span className="text-[#e8bc88] italic">Private Retreat</span>
             </h2>
           </div>
-          <p className="hidden lg:block text-[#9a8878] font-body font-light text-base max-w-xs text-right leading-relaxed">
+          <p className="hidden lg:block text-white/50 font-body font-light text-base max-w-xs text-right leading-relaxed">
             Every villa comes with a private pool, daily service, and views over the Aegean.
           </p>
         </motion.div>
@@ -97,7 +99,7 @@ export default function Villas() {
           animate={isInView ? 'show' : 'hidden'}
           className="grid md:grid-cols-2 gap-6"
         >
-          {villas.map((villa, i) => (
+          {villas.map((villa) => (
             <motion.div
               key={villa.name}
               variants={fadeUp}
@@ -110,8 +112,7 @@ export default function Villas() {
                   alt={villa.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1610] via-[#1a1610]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1610] via-[#1a1610]/20 to-transparent" />
 
                 {/* Tag */}
                 <div className="absolute top-5 left-5">
@@ -120,8 +121,8 @@ export default function Villas() {
                   </span>
                 </div>
 
-                {/* Arrow icon on hover */}
-                <div className="absolute top-5 right-5 w-9 h-9 border border-white/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Arrow on hover */}
+                <div className="absolute top-5 right-5 w-9 h-9 border border-white/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <ArrowUpRight size={16} className="text-white" />
                 </div>
               </div>
@@ -131,16 +132,24 @@ export default function Villas() {
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="font-display text-2xl text-white">{villa.name}</h3>
                   <div className="text-right">
-                    <div className="text-white/60 text-xs font-body">{villa.size}</div>
+                    <div className="text-white/50 text-xs font-body">{villa.size}</div>
                     <div className="text-[#c49a6c] text-xs font-body">{villa.capacity}</div>
                   </div>
                 </div>
                 <p className="text-[#c49a6c] text-xs tracking-widest uppercase font-body mb-4">
                   {villa.feature}
                 </p>
-                <p className="text-white/50 text-sm font-body font-light leading-relaxed">
+                <p className="text-white/60 text-sm font-body font-light leading-relaxed mb-6">
                   {villa.description}
                 </p>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-xs tracking-[0.2em] uppercase border border-[#c49a6c]/50 text-[#c49a6c] px-5 py-2.5 hover:bg-[#c49a6c] hover:text-white transition-all duration-300 font-body"
+                >
+                  Book This Villa
+                </a>
               </div>
             </motion.div>
           ))}

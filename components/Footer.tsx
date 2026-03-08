@@ -79,7 +79,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Sunny Villas Resort & Spa Halkidiki
           </p>
           <p className="text-white/20 text-xs font-body">
-            Feeling special in a magic place
+            Feeling special in a magic place ✦
           </p>
         </div>
       </div>

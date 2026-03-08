@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
+const BOOKING_URL = 'https://sunnyvillasresortandspa.reserve-online.net/'
+
 const links = [
-  { label: 'Villas', href: '#villas' },
-  { label: 'Amenities', href: '#amenities' },
-  { label: 'Activities', href: '#activities' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Villas', href: '/#villas' },
+  { label: 'Amenities', href: '/#amenities' },
+  { label: 'Activities', href: '/#activities' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Nav() {
@@ -29,13 +31,13 @@ export default function Nav() {
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#fdfaf6]/90 backdrop-blur-md border-b border-[#e5d9c8]'
+            ? 'bg-[#fdfaf6]/92 backdrop-blur-md border-b border-[#e5d9c8]'
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex flex-col leading-none">
+          <a href="/" className="flex flex-col leading-none">
             <span
               className={`font-display text-2xl tracking-wide transition-colors duration-300 ${
                 scrolled ? 'text-[#1a1610]' : 'text-white'
@@ -45,7 +47,7 @@ export default function Nav() {
             </span>
             <span
               className={`text-[10px] tracking-[0.25em] uppercase font-body font-light transition-colors duration-300 ${
-                scrolled ? 'text-[#c49a6c]' : 'text-white/70'
+                scrolled ? 'text-[#c49a6c]' : 'text-white/80'
               }`}
             >
               Halkidiki, Greece
@@ -59,7 +61,7 @@ export default function Nav() {
                 key={link.label}
                 href={link.href}
                 className={`text-sm tracking-[0.1em] uppercase font-body font-light transition-colors duration-300 hover:text-[#c49a6c] ${
-                  scrolled ? 'text-[#1a1610]' : 'text-white/90'
+                  scrolled ? 'text-[#1a1610]' : 'text-white'
                 }`}
               >
                 {link.label}
@@ -68,12 +70,14 @@ export default function Nav() {
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center">
             <a
-              href="#contact"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2.5 text-sm tracking-[0.1em] uppercase font-body font-medium border transition-all duration-300 hover:bg-[#c49a6c] hover:border-[#c49a6c] hover:text-white"
               style={{
-                borderColor: scrolled ? '#c49a6c' : 'rgba(255,255,255,0.6)',
+                borderColor: scrolled ? '#c49a6c' : 'rgba(255,255,255,0.7)',
                 color: scrolled ? '#c49a6c' : 'white',
               }}
             >
@@ -117,11 +121,13 @@ export default function Nav() {
               </motion.a>
             ))}
             <motion.a
-              href="#contact"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="mt-4 px-8 py-3 border border-[#c49a6c] text-[#c49a6c] text-sm tracking-widest uppercase"
+              className="mt-4 px-8 py-3 border border-[#c49a6c] text-[#c49a6c] text-sm tracking-widest uppercase font-body"
               onClick={() => setMenuOpen(false)}
             >
               Book Now

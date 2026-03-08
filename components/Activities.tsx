@@ -8,25 +8,25 @@ const activities = [
     name: 'Yacht Cruises',
     description:
       'Explore the hidden coves and crystal waters of Halkidiki from the deck of a private yacht. We arrange everything.',
-    image: 'https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?w=700&q=80',
+    image: 'https://cdn.web-dynamic.gr/sunnyvillas/images/menu-slider/Menu-slider-4.jpg',
   },
   {
     name: 'Horseback Riding',
     description:
       'Ride through the pine forests and coastal trails of Halkidiki with experienced guides. Suitable for all levels.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80',
+    image: 'https://cdn.web-dynamic.gr/sunnyvillas/images/menu-slider/Menu-slider-2.jpg',
   },
   {
     name: 'ATV Adventures',
     description:
       'Off-road routes through the hills above Chaniotis with dramatic sea views at every turn.',
-    image: 'https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=700&q=80',
+    image: 'https://cdn.web-dynamic.gr/sunnyvillas/images/menu-slider/Menu-slider-3.jpg',
   },
   {
-    name: 'Local Culture',
+    name: 'Spa & Wellness',
     description:
-      'We&apos;ll connect you with the best of Greece — tavernas, monasteries, markets. The stuff that doesn&apos;t make TripAdvisor.',
-    image: 'https://images.unsplash.com/photo-1555993539-1732b0258235?w=700&q=80',
+      'Beauty treatments, massage, and full spa services. Available in-villa or at the on-site spa.',
+    image: 'https://cdn.web-dynamic.gr/sunnyvillas/images/spa-homepage.jpg',
   },
 ]
 
@@ -53,11 +53,11 @@ export default function Activities() {
           <h2 className="font-display text-[clamp(36px,5vw,64px)] text-white leading-[1.05]">
             Your Story,
             <br />
-            <span className="italic text-[#c49a6c]">Your Adventure</span>
+            <span className="italic text-[#e8bc88]">Your Adventure</span>
           </h2>
         </motion.div>
 
-        {/* Activities: horizontal strip */}
+        {/* Activities grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {activities.map((activity, i) => (
             <motion.div
@@ -67,19 +67,18 @@ export default function Activities() {
               transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               className="group cursor-pointer"
             >
-              {/* Image */}
               <div className="relative aspect-[3/4] overflow-hidden mb-5">
                 <img
                   src={activity.image}
                   alt={activity.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
-                  <h3 className="font-display text-xl text-white leading-tight">{activity.name}</h3>
+                  <h3 className="font-display text-xl text-white leading-tight drop-shadow-md">{activity.name}</h3>
                 </div>
               </div>
-              <p className="text-white/40 text-sm font-body font-light leading-relaxed">
+              <p className="text-white/55 text-sm font-body font-light leading-relaxed">
                 {activity.description}
               </p>
             </motion.div>

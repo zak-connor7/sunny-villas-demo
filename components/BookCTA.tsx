@@ -3,23 +3,22 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
+const BOOKING_URL = 'https://sunnyvillasresortandspa.reserve-online.net/'
+
 export default function BookCTA() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   return (
-    <section
-      ref={ref}
-      className="relative py-40 px-6 overflow-hidden"
-    >
-      {/* Background image */}
+    <section ref={ref} className="relative py-40 px-6 overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?w=2000&q=80"
+          src="https://cdn.web-dynamic.gr/sunnyvillas/images/menu-slider/Menu-slider-1.jpg"
           alt="Book your stay"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#1a1610]/75" />
+        <div className="absolute inset-0 bg-[#1a1610]/80" />
       </div>
 
       <motion.div
@@ -39,31 +38,33 @@ export default function BookCTA() {
         <h2 className="font-display text-[clamp(40px,6vw,80px)] text-white leading-[1.05] mb-6">
           Ready to Feel
           <br />
-          <span className="italic text-[#c49a6c]">Special?</span>
+          <span className="italic text-[#e8bc88]">Special?</span>
         </h2>
 
-        <p className="text-white/60 font-body font-light text-lg leading-relaxed mb-12 max-w-xl mx-auto">
-          Contact us directly and we&apos;ll find the perfect villa for your dates. Online check-in
-          available, flexible cancellation policy.
+        <p className="text-white/75 font-body font-light text-lg leading-relaxed mb-12 max-w-xl mx-auto">
+          Contact us directly and we&apos;ll find the perfect villa for your dates. Online booking
+          available, flexible cancellation policy, up to 25% off selected dates.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="mailto:info@sunnyvillashalkidiki.com"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-10 py-4 bg-[#c49a6c] text-white text-sm tracking-[0.15em] uppercase font-body font-medium hover:bg-[#a07840] transition-colors duration-300"
           >
-            Email Us
+            Book Online
           </a>
           <a
-            href="tel:+306945796792"
-            className="px-10 py-4 border border-white/40 text-white text-sm tracking-[0.15em] uppercase font-body font-light hover:border-[#c49a6c] hover:text-[#c49a6c] transition-all duration-300"
+            href="/contact"
+            className="px-10 py-4 border border-white/50 text-white text-sm tracking-[0.15em] uppercase font-body font-light hover:border-[#c49a6c] hover:text-[#c49a6c] transition-all duration-300"
           >
-            +30 694 579 6792
+            Send an Enquiry
           </a>
         </div>
 
-        <p className="mt-8 text-white/30 text-xs font-body tracking-widest uppercase">
-          Special rates available for long stays · 25% off selected dates
+        <p className="mt-8 text-white/40 text-xs font-body tracking-widest uppercase">
+          Special rates available for long stays · Online check-in available
         </p>
       </motion.div>
     </section>
