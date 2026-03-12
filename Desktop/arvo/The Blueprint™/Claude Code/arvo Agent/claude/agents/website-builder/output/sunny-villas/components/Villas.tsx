@@ -80,7 +80,7 @@ function VillaRow({ villa, index }: { villa: typeof villas[0]; index: number }) 
       {/* Text - 35% on desktop */}
       <motion.div
         className={`flex flex-col justify-center px-8 py-12 md:px-12 lg:px-16 md:py-16 ${
-          isReversed ? 'bg-white' : 'bg-cream'
+          isReversed ? 'bg-surface' : 'bg-cream'
         }`}
         style={{ direction: 'ltr' }}
         initial={{ opacity: 0, y: 24 }}

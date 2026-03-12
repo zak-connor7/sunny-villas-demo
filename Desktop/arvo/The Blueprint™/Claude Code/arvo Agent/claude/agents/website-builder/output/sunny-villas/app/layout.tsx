@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Forum, Inter } from 'next/font/google'
+import { Forum, Red_Hat_Display, Dancing_Script } from 'next/font/google'
 import './globals.css'
 
 const forum = Forum({
@@ -9,9 +9,15 @@ const forum = Forum({
   display: 'swap',
 })
 
-const inter = Inter({
+const redhat = Red_Hat_Display({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-redhat',
+  display: 'swap',
+})
+
+const dancing = Dancing_Script({
+  subsets: ['latin'],
+  variable: '--font-dancing',
   display: 'swap',
 })
 
@@ -35,8 +41,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${forum.variable} ${inter.variable}`}>
-      <body className="bg-cream font-sans antialiased">{children}</body>
+    <html lang="en" className={`${forum.variable} ${redhat.variable} ${dancing.variable}`}>
+      <body className="bg-surface font-sans antialiased text-muted">{children}</body>
     </html>
   )
 }

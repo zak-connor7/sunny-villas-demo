@@ -35,7 +35,7 @@ export default function Nav() {
             : 'bg-transparent'
         }`}
         style={{
-          borderBottom: scrolled ? '1px solid #dcd5c9' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid #E8E3DD' : '1px solid transparent',
         }}
       >
         <div className="relative flex items-center h-[72px] px-4 sm:px-6 lg:px-12">
@@ -94,7 +94,7 @@ export default function Nav() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 sm:gap-2 text-white text-[9px] sm:text-[10px] tracking-[0.1em] font-semibold px-3 sm:px-5 py-2.5 sm:py-3 uppercase whitespace-nowrap"
-              style={{ background: '#b8674b' }}
+              style={{ background: '#BA7D6E' }}
             >
               <CalendarDays size={11} className="sm:w-3 sm:h-3" />
               Book Now

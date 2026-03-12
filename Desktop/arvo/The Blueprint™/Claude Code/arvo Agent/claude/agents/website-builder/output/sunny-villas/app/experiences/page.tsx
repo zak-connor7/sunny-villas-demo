@@ -65,7 +65,7 @@ function SpaSection() {
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.1 + i * 0.06 }}
                 >
-                  <Icon size={20} strokeWidth={1.25} color="#b8674b" className="mt-0.5 shrink-0" />
+                  <Icon size={20} strokeWidth={1.25} color="#BA7D6E" className="mt-0.5 shrink-0" />
                   <div>
                     <p className="text-[12px] font-semibold text-white tracking-[0.06em] mb-0.5">{label}</p>
                     <p className="text-[12px] text-white/40 leading-relaxed">{desc}</p>
@@ -149,7 +149,7 @@ function ActivitiesSection() {
           {activities.map(({ icon: Icon, label, desc }, i) => (
             <motion.div
               key={label}
-              className="bg-white p-8 flex items-start gap-5"
+              className="bg-cream p-8 flex items-start gap-5 rounded"
               style={{ borderRadius: 4 }}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -182,7 +182,7 @@ function EventsSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section className="bg-white py-20 lg:py-28" ref={ref}>
+    <section className="bg-surface py-20 lg:py-28" ref={ref}>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <motion.div

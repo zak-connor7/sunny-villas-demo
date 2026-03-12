@@ -47,7 +47,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Image grid */}
-      <section className="bg-white py-12 lg:py-16" ref={ref}>
+      <section className="bg-surface py-12 lg:py-16" ref={ref}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {images.map(({ src, alt }, i) => (

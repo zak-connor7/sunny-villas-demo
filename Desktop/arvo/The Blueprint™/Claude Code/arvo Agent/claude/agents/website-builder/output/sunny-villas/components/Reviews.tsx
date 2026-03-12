@@ -58,7 +58,7 @@ function ReviewCard({ review, index }: { review: typeof reviews[0]; index: numbe
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.65, delay: (index % 3) * 0.1 }}
-      className="bg-white p-8 md:p-10 flex flex-col shadow-[0_1px_3px_rgba(0,0,0,0.06)] border border-border/50"
+      className="bg-surface p-8 md:p-10 flex flex-col shadow-[0_1px_3px_rgba(0,0,0,0.04)] border border-border/40 rounded"
     >
       <p className="text-[14px] leading-[1.85] text-muted flex-1 mb-6">
         &ldquo;{review.quote}&rdquo;

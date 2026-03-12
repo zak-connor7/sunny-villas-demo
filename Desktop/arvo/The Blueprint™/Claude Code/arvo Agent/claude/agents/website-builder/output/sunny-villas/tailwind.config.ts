@@ -8,16 +8,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy:    '#0d1f3c',
-        rust:    '#b8674b',
-        cream:   '#f5efe6',
-        surface: '#ede7dd',
-        muted:   '#7a746e',
-        border:  '#dcd5c9',
+        navy:    '#2D2E33',
+        rust:    '#BA7D6E',
+        cream:   '#F9F4EF',
+        surface: '#FDFCFB',
+        muted:   '#6C6D74',
+        border:  '#E8E3DD',
+        taupe:   '#A89582',
+        subtle:  '#B4B5BA',
       },
       fontFamily: {
         display: ['var(--font-forum)', 'Georgia', 'serif'],
-        sans:    ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans:    ['var(--font-redhat)', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        DEFAULT: '5px',
       },
       keyframes: {
         marquee: {

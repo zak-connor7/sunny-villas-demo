@@ -107,7 +107,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 text-[11px] tracking-[0.12em] font-semibold text-white uppercase px-7 py-3.5 transition-opacity hover:opacity-90"
-                    style={{ background: '#b8674b' }}
+                    style={{ background: '#BA7D6E' }}
                   >
                     Book Now
                   </a>

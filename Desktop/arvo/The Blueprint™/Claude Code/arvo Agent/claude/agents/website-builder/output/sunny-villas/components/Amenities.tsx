@@ -65,7 +65,7 @@ export default function Amenities() {
               transition={{ duration: 0.5, delay: i * 0.04 }}
             >
               <div className="flex justify-center md:justify-start mb-3">
-                <Icon size={24} strokeWidth={1.25} color="#b8674b" />
+                <Icon size={24} strokeWidth={1.25} color="#BA7D6E" />
               </div>
               <p className="text-[12px] font-semibold text-white tracking-[0.04em] mb-1">
                 {label}

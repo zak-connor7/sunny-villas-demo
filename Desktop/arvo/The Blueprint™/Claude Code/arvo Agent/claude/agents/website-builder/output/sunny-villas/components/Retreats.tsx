@@ -12,7 +12,7 @@ const retreatTypes = [
       src: 'https://www.sunnyvillashalkidiki.com/images/SunnyVillas-Chalkidiki-Services-horizontal.jpg',
       alt: 'Sunny Villas services and resort grounds, Halkidiki',
     },
-    bg: 'bg-white',
+    bg: 'bg-surface',
   },
   {
     heading: 'Wellness Retreats',
@@ -30,7 +30,7 @@ const retreatTypes = [
       src: '/images/welcome-slider-03.webp',
       alt: 'Sunny Villas resort grounds and pool for group celebrations',
     },
-    bg: 'bg-white',
+    bg: 'bg-surface',
   },
 ]
 
@@ -89,7 +89,7 @@ export default function Retreats() {
   return (
     <section id="retreats" ref={ref}>
       {/* Section header */}
-      <div className="bg-white py-24 lg:py-28">
+      <div className="bg-surface py-24 lg:py-28">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

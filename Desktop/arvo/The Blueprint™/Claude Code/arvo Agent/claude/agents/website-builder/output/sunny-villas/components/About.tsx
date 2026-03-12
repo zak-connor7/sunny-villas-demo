@@ -15,7 +15,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="about" className="bg-white py-24 lg:py-32" ref={ref}>
+    <section id="about" className="bg-surface py-24 lg:py-32" ref={ref}>
       <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
