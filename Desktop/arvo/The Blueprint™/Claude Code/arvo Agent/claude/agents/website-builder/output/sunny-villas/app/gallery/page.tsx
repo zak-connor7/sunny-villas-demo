@@ -49,12 +49,12 @@ export default function GalleryPage() {
       {/* Image grid */}
       <section className="bg-white py-12 lg:py-16" ref={ref}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {images.map(({ src, alt }, i) => (
               <motion.button
                 key={i}
                 className="relative overflow-hidden cursor-pointer group"
-                style={{ aspectRatio: i === 0 || i === 5 ? '4/5' : '4/3' }}
+                style={{ aspectRatio: '16/9' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.06 }}
@@ -66,7 +66,12 @@ export default function GalleryPage() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-300" />
+                {/* Hover overlay with title */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end justify-start p-4">
+                  <span className="text-white text-[12px] tracking-[0.08em] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {alt}
+                  </span>
+                </div>
               </motion.button>
             ))}
           </div>
@@ -83,7 +88,6 @@ export default function GalleryPage() {
             exit={{ opacity: 0 }}
             onClick={closeLightbox}
           >
-            {/* Close button */}
             <button
               className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10"
               onClick={closeLightbox}
@@ -91,7 +95,6 @@ export default function GalleryPage() {
               <X size={28} strokeWidth={1.5} />
             </button>
 
-            {/* Prev/Next */}
             <button
               className="absolute left-4 md:left-8 text-white/40 hover:text-white transition-colors z-10"
               onClick={(e) => { e.stopPropagation(); prev() }}
@@ -105,7 +108,6 @@ export default function GalleryPage() {
               <ChevronRight size={36} strokeWidth={1.5} />
             </button>
 
-            {/* Image */}
             <motion.div
               key={lightboxIndex}
               className="relative w-[90vw] h-[80vh] max-w-[1200px]"
@@ -123,7 +125,6 @@ export default function GalleryPage() {
               />
             </motion.div>
 
-            {/* Counter */}
             <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 text-[12px] tracking-[0.1em]">
               {lightboxIndex + 1} / {images.length}
             </p>
